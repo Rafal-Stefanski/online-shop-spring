@@ -1,4 +1,4 @@
-# Online Shop Task
+# Online Shop Task with profiles
 
 ###  Description [PL]:
 
