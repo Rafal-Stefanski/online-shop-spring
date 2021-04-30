@@ -1,13 +1,13 @@
-package com.rafal.onlineshopspring;
+package com.rafal.onlineshopspring.shop;
 
-public class Product {
+public class Item {
     private String name;
     private double price;
 
-    public Product() {
+    public Item() {
     }
 
-    public Product(String name, double price) {
+    public Item(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -26,5 +26,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
