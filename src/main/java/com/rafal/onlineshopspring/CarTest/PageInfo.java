@@ -34,8 +34,8 @@ public class PageInfo {
 
     @EventListener(ApplicationReadyEvent.class)
     public void get() {
-        System.out.println(author);
-        System.out.println(creationDate);
+//        System.out.println(author);
+//        System.out.println(creationDate);
     }
 }
 

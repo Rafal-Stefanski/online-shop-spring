@@ -1,13 +1,13 @@
 package com.rafal.onlineshopspring.shop;
 
-public class Item {
+public class Product {
     private String name;
     private double price;
 
-    public Item() {
+    public Product() {
     }
 
-    public Item(String name, double price) {
+    public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }

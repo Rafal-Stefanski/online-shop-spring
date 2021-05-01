@@ -6,11 +6,11 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("Premium")
-public class ShopPremium {
+@Profile("START")
+public class ShopSTART {
 
     @EventListener(ApplicationReadyEvent.class)
     public void get() {
-        System.out.println("ShopPremium");
+        System.out.println("Shop START");
     }
 }
