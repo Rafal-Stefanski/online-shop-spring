@@ -11,11 +11,11 @@ public class ProductRepository {
     private List<Product> productList;
 
     public ProductRepository() {
-        Product product1 = new Product("Product nr 1", 50.00);
-        Product product2 = new Product("Product nr 2", 75.00);
-        Product product3 = new Product("Product nr 3", 100.00);
-        Product product4 = new Product("Product nr 4", 125.00);
-        Product product5 = new Product("Product nr 5", 150.00);
+        Product product1 = new Product("Product No.1");
+        Product product2 = new Product("Product No.2");
+        Product product3 = new Product("Product No.3");
+        Product product4 = new Product("Product No.4");
+        Product product5 = new Product("Product No.5");
 
         productList = new ArrayList<>();
         productList.add(product1);
@@ -28,6 +28,10 @@ public class ProductRepository {
 
     public List<Product> getProductList() {
         return productList;
+    }
+
+    public void showProductList() {
+        productList.forEach(System.out::println);
     }
 
     public List<Product> getItems() {

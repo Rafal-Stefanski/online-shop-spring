@@ -14,10 +14,10 @@ public class OnlineShopSpringApplication {
         SpringApplication.run(OnlineShopSpringApplication.class, args);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void get() {
-        System.out.println("\n*** Online Shop ***\n");
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void get() {
+//        System.out.println("\n*** Online Shop ***\n");
+//    }
 
     @Bean
     public ReloadableResourceBundleMessageSource messageSource() {
