@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public class ProductRepository {
 
-    private List<Product> productList;
+    private final List<Product> productList;
 
     public ProductRepository() {
         Product product1 = new Product("Product No.1");
@@ -23,7 +23,6 @@ public class ProductRepository {
         productList.add(product3);
         productList.add(product4);
         productList.add(product5);
-
     }
 
     public List<Product> getProductList() {
@@ -38,11 +37,5 @@ public class ProductRepository {
         return productList.stream()
                 .map(Product::getPrice)
                 .reduce(0.00, Double::sum);
-
-//        return Math.round(((sum + (sum * vatValue) - (sum * discountValue))) * 100.00)/100.00;
-    }
-
-    public List<Product> getItems() {
-        return productList;
     }
 }
