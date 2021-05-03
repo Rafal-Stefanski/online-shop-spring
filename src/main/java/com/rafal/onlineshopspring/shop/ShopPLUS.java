@@ -3,14 +3,12 @@ package com.rafal.onlineshopspring.shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
 @Profile("plus")
-//@ConfigurationProperties(prefix = "plus-parameter")
 public class ShopPLUS {
 
     final private ProductRepository productRepository;
@@ -18,13 +16,16 @@ public class ShopPLUS {
     @Value("${product-info.currency}")
     private String currency;
 
-
-    @Value("${plus-parameter.vat=0.23}")
+    @Value("${product-info.vat}")
     private double vatValue;
 
     @Autowired
     public ShopPLUS(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+
+    public double getSum() {
+        return productRepository.sumOfProducts();
     }
 
     public double getFinalSum() {
@@ -38,8 +39,7 @@ public class ShopPLUS {
         System.out.println("\n*** Online Shop - PLUS ***\n");
         System.out.println("Your products list:");
         productRepository.showProductList();
-        System.out.println("\nYou have: " + productRepository.getProductList().size() + " items in your basket, of value: " + getFinalSum() + ",- " + currency + ", including VAT " + vatValue + "%");
+        System.out.println("\nYou have: " + productRepository.getProductList().size() + " items in your basket, of value: " + getSum() + ",- " + currency +
+                "\nIncluding VAT " + vatValue + "%: " + getFinalSum() + ",- " + currency);
     }
-
-
 }

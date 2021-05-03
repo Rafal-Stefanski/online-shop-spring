@@ -23,7 +23,6 @@ public class ShopSTART {
 
     public double getFinalSum() {
         return productRepository.sumOfProducts();
-//      return Math.round(((sum + (sum * vatValue) - (sum * discountValue))) * 100.00)/100.00;
     }
 
     @EventListener(ApplicationReadyEvent.class)
