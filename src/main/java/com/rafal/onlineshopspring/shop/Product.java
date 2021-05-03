@@ -1,24 +1,16 @@
 package com.rafal.onlineshopspring.shop;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import java.util.Random;
 
-@Component
 public class Product {
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
+    private final String currency;
 
-    @Value("${product-info.currency}")
-    private String currency;
-
-    public Product() {
-    }
-
-    public Product(String name) {
+    public Product(String name, String currency) {
         this.name = name;
-        this.price = Math.round(50.00 + new Random().nextDouble() * (300.00 - 50.00));
+        this.price = Math.floor(50.00 + new Random().nextDouble() * (300.00 - 50.00));
+        this.currency = currency;
     }
 
     public double getPrice() {

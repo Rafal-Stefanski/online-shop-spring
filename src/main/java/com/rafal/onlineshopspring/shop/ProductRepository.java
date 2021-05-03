@@ -1,5 +1,6 @@
 package com.rafal.onlineshopspring.shop;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,12 +11,16 @@ public class ProductRepository {
 
     private final List<Product> productList;
 
+    @Value("${product-info.currency}")
+    private String currency;
+
     public ProductRepository() {
-        Product product1 = new Product("Product No.1");
-        Product product2 = new Product("Product No.2");
-        Product product3 = new Product("Product No.3");
-        Product product4 = new Product("Product No.4");
-        Product product5 = new Product("Product No.5");
+
+        Product product1 = new Product("Product No.1", currency);
+        Product product2 = new Product("Product No.2", currency);
+        Product product3 = new Product("Product No.3", currency);
+        Product product4 = new Product("Product No.4", currency);
+        Product product5 = new Product("Product No.5", currency);
 
         productList = new ArrayList<>();
         productList.add(product1);
@@ -30,7 +35,9 @@ public class ProductRepository {
     }
 
     public void showProductList() {
-        productList.forEach(System.out::println);
+        for (Product product : productList) {
+            System.out.println(product);
+        }
     }
 
     public double sumOfProducts() {
