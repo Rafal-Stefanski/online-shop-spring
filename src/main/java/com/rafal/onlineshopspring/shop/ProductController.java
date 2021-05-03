@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+//@RestController
 public class ProductController {
 
     private ProductRepository productRepository;
 
-    @Autowired
+//    @Autowired
     public ProductController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @Autowired
+//    @Autowired
     public void setProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @GetMapping
-    public List<Product> get() {
-        return productRepository.getItems();
-    }
+//    @GetMapping
+//    public List<Product> get() {
+//        return productRepository.getItems();
+//    }
 }

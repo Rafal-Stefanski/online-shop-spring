@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 //@ConfigurationProperties(prefix = "page-info") // dla wszystkich wcześniejszych wartości @Value()
 public class PageInfo {
 
-    @Value("${page-info.author}") //- zamiast tego stosujemy @ConfigurationProperties(prefix = "page-info")
+//    @Value("${page-info.author}") //- zamiast tego stosujemy @ConfigurationProperties(prefix = "page-info")
     private String author;
 
     //    @Value("${page-info.creation-date}")

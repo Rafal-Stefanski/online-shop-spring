@@ -34,6 +34,14 @@ public class ProductRepository {
         productList.forEach(System.out::println);
     }
 
+    public double sumOfProducts() {
+        return productList.stream()
+                .map(Product::getPrice)
+                .reduce(0.00, Double::sum);
+
+//        return Math.round(((sum + (sum * vatValue) - (sum * discountValue))) * 100.00)/100.00;
+    }
+
     public List<Product> getItems() {
         return productList;
     }
