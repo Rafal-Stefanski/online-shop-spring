@@ -25,6 +25,10 @@ public class Product {
         return name;
     }
 
+    public String getCurrency() {   // needed for method get in ProductController to show JASON of Product List.
+        return currency;
+    }
+
     @Override
     public String toString() {
         return "Product name: '" + name + '\'' +
