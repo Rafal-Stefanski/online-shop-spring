@@ -11,8 +11,8 @@ public class ProductRepository {
 
     private final List<Product> productList;
 
-    @Value("${product-info.currency}")
-    private String currency;
+    @Value("${product-info.currency}")     // This doesn't work :(
+    private final String currency = "zł";   // that's why zł is given here instead of application.prop
 
     public ProductRepository() {
 

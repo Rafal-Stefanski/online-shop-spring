@@ -3,14 +3,12 @@ package com.rafal.onlineshopspring.shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
 @Profile("pro")
-@ConfigurationProperties(prefix = "pro-parameter")
 public class ShopPRO {
 
     final private ProductRepository productRepository;
@@ -50,8 +48,8 @@ public class ShopPRO {
         System.out.println("Your products list:");
         productRepository.showProductList();
         System.out.println("\nYou have: " + productRepository.getProductList().size() + " items in your basket, of value: " + getSum() + ",- " + currency +
-                "\nIncluding VAT " + vatValue * 100 + "%: " + getFinalSum() + ",- " + currency +
-                "\nWith discount " + discountValue * 100 + "%: " + getFinalSumAfterDiscount() + ",- " + currency);
+                "\nIncluding VAT (" + vatValue * 100 + "%): " + getFinalSum() + ",- " + currency +
+                "\nWith discount (" + discountValue * 100 + "%): " + getFinalSumAfterDiscount() + ",- " + currency);
     }
 
 }
