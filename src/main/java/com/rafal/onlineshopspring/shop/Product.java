@@ -8,7 +8,7 @@ public class Product {
     private final String name;
     private final double price;
 
-    @Value("${product-info.currency}")   // This doesn't work :(
+    @Value("${product-info.currency}")   // This doesn't work, unfortunately currency is declared in ProductRepository :(
     private final String currency;
 
     public Product(String name, String currency) {
@@ -19,6 +19,10 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    public String getName() {   // needed for method get in ProductController to show JASON of Product List.
+        return name;
     }
 
     @Override
