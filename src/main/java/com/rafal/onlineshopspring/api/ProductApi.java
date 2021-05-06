@@ -6,16 +6,43 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/products")    // nie trzeba podawać /products przy każdej metodzie
 public class ProductApi {
 
-    //    @RequestMapping(value = "/products", method = RequestMethod.GET)
-    @RequestMapping(method = RequestMethod.GET)
-    public String getProducts() {
-        return "Hello World with GET";
-    }
 
-//    @GetMapping
+//    //    @RequestMapping(value = "/products", method = RequestMethod.GET)
+//    @RequestMapping(method = RequestMethod.GET) // alternatywnie dla @GetMapping
 //    public String getProducts() {
 //        return "Hello World with GET";
 //    }
+
+    // PARAMETER
+//    @GetMapping
+//    public String getProducts(@RequestParam String name, @RequestParam(required = false,defaultValue = "") String surname) {
+//        return "Hello " + name + " " + surname;
+//    }
+
+    // PATH
+//    @GetMapping("/{name}")
+//    public String getProducts(@PathVariable String name) {
+//        return "Hello " + name;
+//    }
+
+      // HEADER
+//    @GetMapping
+//    public String getProducts(@RequestHeader String name) {
+//        return "Hello " + name;
+//    }
+
+    // BODY
+//    @GetMapping
+//    public String addProducts(@RequestBody String name) {
+//        return "Hello " + name;
+//    }
+
+    // PARAMETER + HEADER
+    @GetMapping
+    public String getProducts(@RequestParam String name,
+                              @RequestHeader(required = false, defaultValue = "") String surname) {
+        return "Hello " + name + " " + surname;
+    }
 
     @PostMapping
     public String addProduct() {
